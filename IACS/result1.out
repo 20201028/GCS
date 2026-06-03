@@ -1,0 +1,1442 @@
+Namespace(Test=False, act_type='relu', batch_norm=False, cuda=True, data_dir='../DataSet/', data_set='facebook', decay_factor=0.8, decay_patience=10, decoder_type='IP', device=device(type='cuda', index=1), dropout=0.2, embed_type='prone', epochs=200, film_type='no', finetune_epochs=10, gnn_act_type='relu', gnn_out_dim=128, gnn_type='GAT', learning_rate=1e-05, meta_method='IACS', mlp_hid_dim=512, no_cuda=False, num_e_hid=128, num_g_hid=128, num_layers=3, num_neg=0.05, num_pos=0.05, num_shots=4, num_workers=16, pool_type='avg', project_dir='./', scheduler_type='exponential', seed=0, task_size=9, test_task_num=32, train_task_num=128, use_embed_feats=True, valid_task_num=32, verbose=True, weight_decay=0.0001)
+set all seed!
+从 ../DataSet/facebook_queries.pt 加载数据成功
+Graphs数量: 8
+第一个Graph的query大小: 9
+len:8
+train_tasks: 4, valid_tasks: 2, test_tasks: 2
+----------IACS for Attribute CS----------
+CSIACSComp(
+  (encoder): IACSEncoder(
+    (gnn): GNN(
+      (convs): ModuleList(
+        (0): GATConv(129, 128, heads=1)
+        (1): GATConv(128, 128, heads=1)
+        (2): GATConv(128, 128, heads=1)
+      )
+      (act_layer): ReLU()
+      (gnn_act_layer): ReLU()
+    )
+  )
+  (decoder): IACSIPDecoder(
+    (linear): MLP(
+      (fc1): FC(
+        (fc): Linear(in_features=256, out_features=128, bias=True)
+      )
+      (act_layer): ReLU()
+      (fc2): FC(
+        (fc): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+)
+begin training...
+  0%|          | 0/200 [00:00<?, ?it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 0 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:4.33787202835083
+0-th Epoch: BCE Loss=315.8659
+**end**
+  0%|          | 1/200 [00:06<21:13,  6.40s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 1 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.0780327320098877
+1-th Epoch: BCE Loss=315.7322
+**end**
+  1%|          | 2/200 [00:07<10:29,  3.18s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 2 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.0263974666595459
+2-th Epoch: BCE Loss=315.4886
+**end**
+  2%|▏         | 3/200 [00:07<06:33,  2.00s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 3 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.05064988136291504
+3-th Epoch: BCE Loss=315.3870
+**end**
+  2%|▏         | 4/200 [00:08<04:47,  1.46s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 4 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.022067785263061523
+4-th Epoch: BCE Loss=315.4076
+**end**
+  2%|▎         | 5/200 [00:09<04:15,  1.31s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 5 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.010617256164550781
+5-th Epoch: BCE Loss=314.9977
+**end**
+  3%|▎         | 6/200 [00:10<03:46,  1.17s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 6 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.06226682662963867
+6-th Epoch: BCE Loss=315.0205
+**end**
+  4%|▎         | 7/200 [00:11<03:20,  1.04s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 7 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.028158903121948242
+7-th Epoch: BCE Loss=314.8301
+**end**
+  4%|▍         | 8/200 [00:11<02:56,  1.09it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 8 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.03666234016418457
+8-th Epoch: BCE Loss=314.8219
+**end**
+  4%|▍         | 9/200 [00:12<02:48,  1.13it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 9 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.04000067710876465
+9-th Epoch: BCE Loss=314.5937
+**end**
+  5%|▌         | 10/200 [00:13<02:41,  1.18it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 10 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.02765035629272461
+10-th Epoch: BCE Loss=314.6196
+**end**
+  6%|▌         | 11/200 [00:14<02:28,  1.27it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 11 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.05320620536804199
+11-th Epoch: BCE Loss=314.2121
+**end**
+  6%|▌         | 12/200 [00:14<02:25,  1.29it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 12 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.01109766960144043
+12-th Epoch: BCE Loss=314.4462
+**end**
+  6%|▋         | 13/200 [00:15<02:31,  1.24it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 13 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.017076969146728516
+13-th Epoch: BCE Loss=314.1797
+**end**
+  7%|▋         | 14/200 [00:16<02:26,  1.27it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 14 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.01668095588684082
+14-th Epoch: BCE Loss=314.0219
+**end**
+  8%|▊         | 15/200 [00:17<02:23,  1.29it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 15 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.02362847328186035
+15-th Epoch: BCE Loss=313.8194
+**end**
+  8%|▊         | 16/200 [00:17<02:14,  1.37it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 16 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.052858829498291016
+16-th Epoch: BCE Loss=313.6188
+**end**
+  8%|▊         | 17/200 [00:18<02:22,  1.28it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 17 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.038924217224121094
+17-th Epoch: BCE Loss=313.6621
+**end**
+  9%|▉         | 18/200 [00:19<02:22,  1.28it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 18 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.02478313446044922
+18-th Epoch: BCE Loss=313.7998
+**end**
+ 10%|▉         | 19/200 [00:20<02:22,  1.27it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 19 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.04345822334289551
+19-th Epoch: BCE Loss=313.5581
+**end**
+ 10%|█         | 20/200 [00:21<02:24,  1.25it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 20 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.018288135528564453
+20-th Epoch: BCE Loss=313.5271
+**end**
+ 10%|█         | 21/200 [00:21<02:18,  1.29it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 21 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.04664134979248047
+21-th Epoch: BCE Loss=313.4843
+**end**
+ 11%|█         | 22/200 [00:22<02:28,  1.20it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 22 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.05099630355834961
+22-th Epoch: BCE Loss=313.2716
+**end**
+ 12%|█▏        | 23/200 [00:23<02:20,  1.26it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 23 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.02710247039794922
+23-th Epoch: BCE Loss=313.2576
+**end**
+ 12%|█▏        | 24/200 [00:24<02:00,  1.46it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 24 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.035309553146362305
+24-th Epoch: BCE Loss=312.8039
+**end**
+ 12%|█▎        | 25/200 [00:24<01:44,  1.68it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 25 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.03860139846801758
+25-th Epoch: BCE Loss=312.9945
+**end**
+ 13%|█▎        | 26/200 [00:25<01:44,  1.67it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 26 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.04252934455871582
+26-th Epoch: BCE Loss=312.7698
+**end**
+ 14%|█▎        | 27/200 [00:25<01:47,  1.61it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 27 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.030767440795898438
+27-th Epoch: BCE Loss=312.8383
+**end**
+ 14%|█▍        | 28/200 [00:26<01:52,  1.52it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 28 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.020052194595336914
+28-th Epoch: BCE Loss=312.8132
+**end**
+ 14%|█▍        | 29/200 [00:27<01:54,  1.49it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 29 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.03590202331542969
+29-th Epoch: BCE Loss=312.4326
+**end**
+ 15%|█▌        | 30/200 [00:28<02:11,  1.30it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 30 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.027901887893676758
+30-th Epoch: BCE Loss=312.3572
+**end**
+ 16%|█▌        | 31/200 [00:29<02:17,  1.23it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 31 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.014998197555541992
+31-th Epoch: BCE Loss=312.5930
+**end**
+ 16%|█▌        | 32/200 [00:29<02:13,  1.26it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 32 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.024579286575317383
+32-th Epoch: BCE Loss=312.4381
+**end**
+ 16%|█▋        | 33/200 [00:30<02:08,  1.30it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 33 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.011294126510620117
+33-th Epoch: BCE Loss=312.4964
+**end**
+ 17%|█▋        | 34/200 [00:31<02:26,  1.14it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 34 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.02608776092529297
+34-th Epoch: BCE Loss=312.2888
+**end**
+ 18%|█▊        | 35/200 [00:32<02:23,  1.15it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 35 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.03239297866821289
+35-th Epoch: BCE Loss=312.2309
+**end**
+ 18%|█▊        | 36/200 [00:33<02:26,  1.12it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 36 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.024330854415893555
+36-th Epoch: BCE Loss=312.0670
+**end**
+ 18%|█▊        | 37/200 [00:34<02:22,  1.15it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 37 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.011992931365966797
+37-th Epoch: BCE Loss=312.1726
+**end**
+ 19%|█▉        | 38/200 [00:35<02:24,  1.12it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 38 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.022473573684692383
+38-th Epoch: BCE Loss=311.7526
+**end**
+ 20%|█▉        | 39/200 [00:35<02:10,  1.24it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 39 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.02126598358154297
+39-th Epoch: BCE Loss=312.0763
+**end**
+ 20%|██        | 40/200 [00:36<02:05,  1.27it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 40 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.02377915382385254
+40-th Epoch: BCE Loss=311.7879
+**end**
+ 20%|██        | 41/200 [00:37<02:11,  1.21it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 41 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.019939422607421875
+41-th Epoch: BCE Loss=311.5535
+**end**
+ 21%|██        | 42/200 [00:38<02:01,  1.30it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 42 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.02013874053955078
+42-th Epoch: BCE Loss=311.6724
+**end**
+ 22%|██▏       | 43/200 [00:39<02:15,  1.16it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 43 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.030654430389404297
+43-th Epoch: BCE Loss=311.4279
+**end**
+ 22%|██▏       | 44/200 [00:39<02:06,  1.23it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 44 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.02284979820251465
+44-th Epoch: BCE Loss=311.1311
+**end**
+ 22%|██▎       | 45/200 [00:40<01:55,  1.34it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 45 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.04038882255554199
+45-th Epoch: BCE Loss=311.5372
+**end**
+ 23%|██▎       | 46/200 [00:41<01:48,  1.42it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 46 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.018942594528198242
+46-th Epoch: BCE Loss=311.8146
+**end**
+ 24%|██▎       | 47/200 [00:41<01:49,  1.39it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 47 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.019898414611816406
+47-th Epoch: BCE Loss=311.1500
+**end**
+ 24%|██▍       | 48/200 [00:42<01:47,  1.42it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 48 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.016858577728271484
+48-th Epoch: BCE Loss=311.2636
+**end**
+ 24%|██▍       | 49/200 [00:43<01:51,  1.35it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 49 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.04833269119262695
+49-th Epoch: BCE Loss=311.1025
+**end**
+ 25%|██▌       | 50/200 [00:44<01:58,  1.27it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 50 Valid Res: Acc=0.1124, Pre=0.1124, Recall=1.0000, F1=0.2020
+valid time:0.011775016784667969
+50-th Epoch: BCE Loss=311.7021
+**end**
+ 26%|██▌       | 51/200 [00:45<02:01,  1.23it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 51 Valid Res: Acc=0.1132, Pre=0.1125, Recall=1.0000, F1=0.2022
+valid time:0.03191685676574707
+51-th Epoch: BCE Loss=311.3414
+**end**
+ 26%|██▌       | 52/200 [00:46<02:11,  1.13it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 52 Valid Res: Acc=0.1145, Pre=0.1126, Recall=1.0000, F1=0.2024
+valid time:0.020384550094604492
+52-th Epoch: BCE Loss=310.9394
+**end**
+ 26%|██▋       | 53/200 [00:46<02:07,  1.15it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 53 Valid Res: Acc=0.1159, Pre=0.1128, Recall=1.0000, F1=0.2027
+valid time:0.03510427474975586
+53-th Epoch: BCE Loss=310.6450
+**end**
+ 27%|██▋       | 54/200 [00:47<02:03,  1.18it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 54 Valid Res: Acc=0.1180, Pre=0.1130, Recall=1.0000, F1=0.2031
+valid time:0.01676034927368164
+54-th Epoch: BCE Loss=311.1629
+**end**
+ 28%|██▊       | 55/200 [00:48<02:01,  1.19it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 55 Valid Res: Acc=0.1189, Pre=0.1131, Recall=1.0000, F1=0.2032
+valid time:0.045525550842285156
+55-th Epoch: BCE Loss=311.0420
+**end**
+ 28%|██▊       | 56/200 [00:49<02:08,  1.12it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 56 Valid Res: Acc=0.1252, Pre=0.1138, Recall=1.0000, F1=0.2044
+valid time:0.025252103805541992
+56-th Epoch: BCE Loss=310.4354
+**end**
+ 28%|██▊       | 57/200 [00:50<02:06,  1.13it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 57 Valid Res: Acc=0.1279, Pre=0.1141, Recall=1.0000, F1=0.2049
+valid time:0.022190570831298828
+57-th Epoch: BCE Loss=311.0467
+**end**
+ 29%|██▉       | 58/200 [00:51<02:09,  1.09it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 58 Valid Res: Acc=0.1306, Pre=0.1145, Recall=1.0000, F1=0.2054
+valid time:0.019448041915893555
+58-th Epoch: BCE Loss=310.7481
+**end**
+ 30%|██▉       | 59/200 [00:51<01:47,  1.31it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 59 Valid Res: Acc=0.1325, Pre=0.1147, Recall=1.0000, F1=0.2058
+valid time:0.03296017646789551
+59-th Epoch: BCE Loss=311.0174
+**end**
+ 30%|███       | 60/200 [00:52<01:53,  1.23it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 60 Valid Res: Acc=0.1333, Pre=0.1148, Recall=1.0000, F1=0.2059
+valid time:0.04129791259765625
+60-th Epoch: BCE Loss=310.8030
+**end**
+ 30%|███       | 61/200 [00:53<01:54,  1.21it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 61 Valid Res: Acc=0.1350, Pre=0.1150, Recall=1.0000, F1=0.2062
+valid time:0.02360677719116211
+61-th Epoch: BCE Loss=310.5952
+**end**
+ 31%|███       | 62/200 [00:54<02:07,  1.08it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 62 Valid Res: Acc=0.1373, Pre=0.1152, Recall=1.0000, F1=0.2067
+valid time:0.03812909126281738
+62-th Epoch: BCE Loss=310.9914
+**end**
+ 32%|███▏      | 63/200 [00:56<02:17,  1.01s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 63 Valid Res: Acc=0.1396, Pre=0.1155, Recall=1.0000, F1=0.2071
+valid time:0.026146411895751953
+63-th Epoch: BCE Loss=310.8452
+**end**
+ 32%|███▏      | 64/200 [00:56<01:57,  1.16it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 64 Valid Res: Acc=0.1413, Pre=0.1157, Recall=1.0000, F1=0.2074
+valid time:0.011090755462646484
+64-th Epoch: BCE Loss=310.3743
+**end**
+ 32%|███▎      | 65/200 [00:57<02:04,  1.09it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 65 Valid Res: Acc=0.1426, Pre=0.1159, Recall=1.0000, F1=0.2077
+valid time:0.03077840805053711
+65-th Epoch: BCE Loss=310.9150
+**end**
+ 33%|███▎      | 66/200 [00:58<01:58,  1.13it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 66 Valid Res: Acc=0.1449, Pre=0.1161, Recall=1.0000, F1=0.2081
+valid time:0.03149247169494629
+66-th Epoch: BCE Loss=310.5078
+**end**
+ 34%|███▎      | 67/200 [00:59<01:54,  1.16it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 67 Valid Res: Acc=0.1482, Pre=0.1165, Recall=1.0000, F1=0.2088
+valid time:0.01824021339416504
+67-th Epoch: BCE Loss=310.4023
+**end**
+ 34%|███▍      | 68/200 [01:00<02:01,  1.09it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 68 Valid Res: Acc=0.1526, Pre=0.1171, Recall=1.0000, F1=0.2096
+valid time:0.02417612075805664
+68-th Epoch: BCE Loss=310.3256
+**end**
+ 34%|███▍      | 69/200 [01:01<02:05,  1.05it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 69 Valid Res: Acc=0.1583, Pre=0.1178, Recall=1.0000, F1=0.2107
+valid time:0.022406578063964844
+69-th Epoch: BCE Loss=310.0974
+**end**
+ 35%|███▌      | 70/200 [01:02<02:05,  1.03it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 70 Valid Res: Acc=0.1650, Pre=0.1186, Recall=1.0000, F1=0.2121
+valid time:0.01909160614013672
+70-th Epoch: BCE Loss=310.0099
+**end**
+ 36%|███▌      | 71/200 [01:03<01:56,  1.10it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 71 Valid Res: Acc=0.1713, Pre=0.1192, Recall=0.9981, F1=0.2130
+valid time:0.03269076347351074
+71-th Epoch: BCE Loss=310.0990
+**end**
+ 36%|███▌      | 72/200 [01:04<02:05,  1.02it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 72 Valid Res: Acc=0.1853, Pre=0.1210, Recall=0.9981, F1=0.2159
+valid time:0.016141891479492188
+72-th Epoch: BCE Loss=310.1441
+**end**
+ 36%|███▋      | 73/200 [01:05<02:00,  1.05it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 73 Valid Res: Acc=0.2017, Pre=0.1232, Recall=0.9981, F1=0.2194
+valid time:0.02130913734436035
+73-th Epoch: BCE Loss=309.6750
+**end**
+ 37%|███▋      | 74/200 [01:06<02:00,  1.05it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 74 Valid Res: Acc=0.2088, Pre=0.1242, Recall=0.9981, F1=0.2209
+valid time:0.021809816360473633
+74-th Epoch: BCE Loss=310.1370
+**end**
+ 38%|███▊      | 75/200 [01:07<02:07,  1.02s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 75 Valid Res: Acc=0.2159, Pre=0.1213, Recall=0.9571, F1=0.2153
+valid time:0.015839815139770508
+75-th Epoch: BCE Loss=309.5055
+**end**
+ 38%|███▊      | 76/200 [01:07<01:54,  1.08it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 76 Valid Res: Acc=0.2279, Pre=0.1184, Recall=0.9104, F1=0.2095
+valid time:0.010716915130615234
+76-th Epoch: BCE Loss=310.4529
+**end**
+ 38%|███▊      | 77/200 [01:08<01:55,  1.06it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 77 Valid Res: Acc=0.2403, Pre=0.1150, Recall=0.8601, F1=0.2028
+valid time:0.03528261184692383
+77-th Epoch: BCE Loss=309.8322
+**end**
+ 39%|███▉      | 78/200 [01:09<01:50,  1.11it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 78 Valid Res: Acc=0.2405, Pre=0.1078, Recall=0.7910, F1=0.1897
+valid time:0.038331031799316406
+78-th Epoch: BCE Loss=310.0162
+**end**
+ 40%|███▉      | 79/200 [01:10<01:48,  1.11it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 79 Valid Res: Acc=0.2423, Pre=0.1019, Recall=0.7351, F1=0.1790
+valid time:0.023874521255493164
+79-th Epoch: BCE Loss=309.6009
+**end**
+ 40%|████      | 80/200 [01:11<01:34,  1.27it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 80 Valid Res: Acc=0.2505, Pre=0.0994, Recall=0.7034, F1=0.1742
+valid time:0.04782724380493164
+80-th Epoch: BCE Loss=309.9941
+**end**
+ 40%|████      | 81/200 [01:12<01:51,  1.07it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 81 Valid Res: Acc=0.2581, Pre=0.0984, Recall=0.6866, F1=0.1722
+valid time:0.051011085510253906
+81-th Epoch: BCE Loss=309.5955
+**end**
+ 41%|████      | 82/200 [01:13<01:49,  1.08it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 82 Valid Res: Acc=0.2692, Pre=0.0987, Recall=0.6772, F1=0.1724
+valid time:0.03446245193481445
+82-th Epoch: BCE Loss=309.0150
+**end**
+ 42%|████▏     | 83/200 [01:14<01:44,  1.12it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 83 Valid Res: Acc=0.2792, Pre=0.0989, Recall=0.6679, F1=0.1724
+valid time:0.04063916206359863
+83-th Epoch: BCE Loss=309.3898
+**end**
+ 42%|████▏     | 84/200 [01:14<01:30,  1.28it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 84 Valid Res: Acc=0.2908, Pre=0.0996, Recall=0.6604, F1=0.1731
+valid time:0.03349637985229492
+84-th Epoch: BCE Loss=309.6526
+**end**
+ 42%|████▎     | 85/200 [01:15<01:23,  1.38it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 85 Valid Res: Acc=0.2987, Pre=0.1004, Recall=0.6586, F1=0.1743
+valid time:0.04488658905029297
+85-th Epoch: BCE Loss=309.2837
+**end**
+ 43%|████▎     | 86/200 [01:16<01:40,  1.14it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 86 Valid Res: Acc=0.3082, Pre=0.1017, Recall=0.6586, F1=0.1762
+valid time:0.0481572151184082
+86-th Epoch: BCE Loss=309.3656
+**end**
+ 44%|████▎     | 87/200 [01:17<01:43,  1.10it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 87 Valid Res: Acc=0.3140, Pre=0.1023, Recall=0.6567, F1=0.1771
+valid time:0.028400659561157227
+87-th Epoch: BCE Loss=309.0377
+**end**
+ 44%|████▍     | 88/200 [01:18<01:39,  1.13it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 88 Valid Res: Acc=0.3226, Pre=0.1036, Recall=0.6567, F1=0.1789
+valid time:0.029661178588867188
+88-th Epoch: BCE Loss=309.8462
+**end**
+ 44%|████▍     | 89/200 [01:19<01:37,  1.14it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 89 Valid Res: Acc=0.3270, Pre=0.1040, Recall=0.6549, F1=0.1794
+valid time:0.02671027183532715
+89-th Epoch: BCE Loss=309.5706
+**end**
+ 45%|████▌     | 90/200 [01:20<01:36,  1.14it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 90 Valid Res: Acc=0.3314, Pre=0.1027, Recall=0.6399, F1=0.1770
+valid time:0.031466007232666016
+90-th Epoch: BCE Loss=309.2253
+**end**
+ 46%|████▌     | 91/200 [01:20<01:35,  1.15it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 91 Valid Res: Acc=0.3348, Pre=0.1030, Recall=0.6381, F1=0.1773
+valid time:0.03543257713317871
+91-th Epoch: BCE Loss=309.4040
+**end**
+ 46%|████▌     | 92/200 [01:21<01:37,  1.11it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 92 Valid Res: Acc=0.3405, Pre=0.1036, Recall=0.6362, F1=0.1782
+valid time:0.03866720199584961
+92-th Epoch: BCE Loss=309.1196
+**end**
+ 46%|████▋     | 93/200 [01:22<01:29,  1.19it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 93 Valid Res: Acc=0.3442, Pre=0.1039, Recall=0.6343, F1=0.1786
+valid time:0.035614728927612305
+93-th Epoch: BCE Loss=309.7652
+**end**
+ 47%|████▋     | 94/200 [01:23<01:31,  1.16it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 94 Valid Res: Acc=0.3472, Pre=0.1041, Recall=0.6325, F1=0.1788
+valid time:0.05234670639038086
+94-th Epoch: BCE Loss=309.1797
+**end**
+ 48%|████▊     | 95/200 [01:24<01:30,  1.16it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 95 Valid Res: Acc=0.3488, Pre=0.1044, Recall=0.6325, F1=0.1792
+valid time:0.01549983024597168
+95-th Epoch: BCE Loss=308.7488
+**end**
+ 48%|████▊     | 96/200 [01:25<01:32,  1.12it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 96 Valid Res: Acc=0.3520, Pre=0.1049, Recall=0.6325, F1=0.1799
+valid time:0.026931047439575195
+96-th Epoch: BCE Loss=308.8596
+**end**
+ 48%|████▊     | 97/200 [01:26<01:28,  1.17it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 97 Valid Res: Acc=0.3547, Pre=0.1050, Recall=0.6306, F1=0.1801
+valid time:0.041521310806274414
+97-th Epoch: BCE Loss=309.2638
+**end**
+ 49%|████▉     | 98/200 [01:26<01:23,  1.21it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 98 Valid Res: Acc=0.3589, Pre=0.1057, Recall=0.6306, F1=0.1810
+valid time:0.037390947341918945
+98-th Epoch: BCE Loss=309.4602
+**end**
+ 50%|████▉     | 99/200 [01:27<01:20,  1.25it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 99 Valid Res: Acc=0.3608, Pre=0.1060, Recall=0.6306, F1=0.1815
+valid time:0.03200650215148926
+99-th Epoch: BCE Loss=308.5166
+**end**
+ 50%|█████     | 100/200 [01:28<01:15,  1.32it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 100 Valid Res: Acc=0.3637, Pre=0.1065, Recall=0.6306, F1=0.1822
+valid time:0.04537534713745117
+100-th Epoch: BCE Loss=309.1426
+**end**
+ 50%|█████     | 101/200 [01:29<01:21,  1.22it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 101 Valid Res: Acc=0.3683, Pre=0.1070, Recall=0.6287, F1=0.1828
+valid time:0.024008512496948242
+101-th Epoch: BCE Loss=308.9771
+**end**
+ 51%|█████     | 102/200 [01:30<01:20,  1.21it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 102 Valid Res: Acc=0.3751, Pre=0.1078, Recall=0.6269, F1=0.1840
+valid time:0.024403810501098633
+102-th Epoch: BCE Loss=308.6191
+**end**
+ 52%|█████▏    | 103/200 [01:30<01:20,  1.20it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 103 Valid Res: Acc=0.3822, Pre=0.1090, Recall=0.6269, F1=0.1857
+valid time:0.0243527889251709
+103-th Epoch: BCE Loss=309.2875
+**end**
+ 52%|█████▏    | 104/200 [01:31<01:18,  1.23it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 104 Valid Res: Acc=0.3857, Pre=0.1093, Recall=0.6250, F1=0.1861
+valid time:0.02766585350036621
+104-th Epoch: BCE Loss=309.1390
+**end**
+ 52%|█████▎    | 105/200 [01:32<01:19,  1.19it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 105 Valid Res: Acc=0.3904, Pre=0.1099, Recall=0.6231, F1=0.1868
+valid time:0.04761075973510742
+105-th Epoch: BCE Loss=309.0927
+**end**
+ 53%|█████▎    | 106/200 [01:33<01:16,  1.23it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 106 Valid Res: Acc=0.3935, Pre=0.1099, Recall=0.6194, F1=0.1867
+valid time:0.02921915054321289
+106-th Epoch: BCE Loss=309.1484
+**end**
+ 54%|█████▎    | 107/200 [01:34<01:23,  1.11it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 107 Valid Res: Acc=0.3937, Pre=0.1099, Recall=0.6194, F1=0.1867
+valid time:0.0710899829864502
+107-th Epoch: BCE Loss=308.9573
+**end**
+ 54%|█████▍    | 108/200 [01:35<01:27,  1.05it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 108 Valid Res: Acc=0.3948, Pre=0.1101, Recall=0.6194, F1=0.1870
+valid time:0.024029016494750977
+108-th Epoch: BCE Loss=308.7307
+**end**
+ 55%|█████▍    | 109/200 [01:36<01:25,  1.06it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 109 Valid Res: Acc=0.3962, Pre=0.1104, Recall=0.6194, F1=0.1874
+valid time:0.022459030151367188
+109-th Epoch: BCE Loss=308.6802
+**end**
+ 55%|█████▌    | 110/200 [01:37<01:18,  1.15it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 110 Valid Res: Acc=0.4002, Pre=0.1108, Recall=0.6175, F1=0.1879
+valid time:0.02006673812866211
+110-th Epoch: BCE Loss=308.7487
+**end**
+ 56%|█████▌    | 111/200 [01:37<01:08,  1.30it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 111 Valid Res: Acc=0.4080, Pre=0.1117, Recall=0.6138, F1=0.1890
+valid time:0.04410815238952637
+111-th Epoch: BCE Loss=309.0749
+**end**
+ 56%|█████▌    | 112/200 [01:38<01:07,  1.29it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 112 Valid Res: Acc=0.4136, Pre=0.1127, Recall=0.6138, F1=0.1904
+valid time:0.02353382110595703
+112-th Epoch: BCE Loss=309.0903
+**end**
+ 56%|█████▋    | 113/200 [01:39<01:11,  1.21it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 113 Valid Res: Acc=0.4174, Pre=0.1134, Recall=0.6138, F1=0.1914
+valid time:0.015869855880737305
+113-th Epoch: BCE Loss=308.5437
+**end**
+ 57%|█████▋    | 114/200 [01:40<01:15,  1.14it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 114 Valid Res: Acc=0.4218, Pre=0.1142, Recall=0.6138, F1=0.1926
+valid time:0.0467984676361084
+114-th Epoch: BCE Loss=308.4130
+**end**
+ 57%|█████▊    | 115/200 [01:41<01:25,  1.01s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 115 Valid Res: Acc=0.4279, Pre=0.1154, Recall=0.6138, F1=0.1943
+valid time:0.055287837982177734
+115-th Epoch: BCE Loss=308.6463
+**end**
+ 58%|█████▊    | 116/200 [01:42<01:25,  1.02s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 116 Valid Res: Acc=0.4388, Pre=0.1173, Recall=0.6119, F1=0.1968
+valid time:0.01934361457824707
+116-th Epoch: BCE Loss=308.6700
+**end**
+ 58%|█████▊    | 117/200 [01:43<01:25,  1.03s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 117 Valid Res: Acc=0.4482, Pre=0.1189, Recall=0.6101, F1=0.1990
+valid time:0.02051377296447754
+117-th Epoch: BCE Loss=308.8211
+**end**
+ 59%|█████▉    | 118/200 [01:45<01:34,  1.15s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 118 Valid Res: Acc=0.4541, Pre=0.1201, Recall=0.6101, F1=0.2007
+valid time:0.03254413604736328
+118-th Epoch: BCE Loss=308.4722
+**end**
+ 60%|█████▉    | 119/200 [01:46<01:28,  1.09s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 119 Valid Res: Acc=0.4572, Pre=0.1205, Recall=0.6082, F1=0.2012
+valid time:0.021761655807495117
+119-th Epoch: BCE Loss=308.6506
+**end**
+ 60%|██████    | 120/200 [01:47<01:34,  1.18s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 120 Valid Res: Acc=0.4593, Pre=0.1210, Recall=0.6082, F1=0.2018
+valid time:0.018180370330810547
+120-th Epoch: BCE Loss=308.8353
+**end**
+ 60%|██████    | 121/200 [01:48<01:35,  1.20s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 121 Valid Res: Acc=0.4610, Pre=0.1213, Recall=0.6082, F1=0.2023
+valid time:0.019459247589111328
+121-th Epoch: BCE Loss=308.3557
+**end**
+ 61%|██████    | 122/200 [01:49<01:29,  1.15s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 122 Valid Res: Acc=0.4623, Pre=0.1216, Recall=0.6082, F1=0.2027
+valid time:0.021367311477661133
+122-th Epoch: BCE Loss=308.2065
+**end**
+ 62%|██████▏   | 123/200 [01:50<01:20,  1.05s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 123 Valid Res: Acc=0.4667, Pre=0.1226, Recall=0.6082, F1=0.2040
+valid time:0.03162693977355957
+123-th Epoch: BCE Loss=308.7996
+**end**
+ 62%|██████▏   | 124/200 [01:51<01:14,  1.02it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 124 Valid Res: Acc=0.4711, Pre=0.1235, Recall=0.6082, F1=0.2054
+valid time:0.03432607650756836
+124-th Epoch: BCE Loss=308.5262
+**end**
+ 62%|██████▎   | 125/200 [01:52<01:13,  1.03it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 125 Valid Res: Acc=0.4713, Pre=0.1236, Recall=0.6082, F1=0.2054
+valid time:0.03888225555419922
+125-th Epoch: BCE Loss=308.0728
+**end**
+ 63%|██████▎   | 126/200 [01:53<01:07,  1.10it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 126 Valid Res: Acc=0.4721, Pre=0.1238, Recall=0.6082, F1=0.2057
+valid time:0.0337061882019043
+126-th Epoch: BCE Loss=309.0226
+**end**
+ 64%|██████▎   | 127/200 [01:53<01:02,  1.17it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 127 Valid Res: Acc=0.4732, Pre=0.1240, Recall=0.6082, F1=0.2060
+valid time:0.028592348098754883
+127-th Epoch: BCE Loss=308.2499
+**end**
+ 64%|██████▍   | 128/200 [01:54<00:58,  1.23it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 128 Valid Res: Acc=0.4736, Pre=0.1241, Recall=0.6082, F1=0.2061
+valid time:0.026575088500976562
+128-th Epoch: BCE Loss=308.5011
+**end**
+ 64%|██████▍   | 129/200 [01:55<00:58,  1.22it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 129 Valid Res: Acc=0.4738, Pre=0.1239, Recall=0.6063, F1=0.2057
+valid time:0.03460383415222168
+129-th Epoch: BCE Loss=307.7785
+**end**
+ 65%|██████▌   | 130/200 [01:56<00:58,  1.20it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 130 Valid Res: Acc=0.4763, Pre=0.1244, Recall=0.6063, F1=0.2065
+valid time:0.019353389739990234
+130-th Epoch: BCE Loss=308.5403
+**end**
+ 66%|██████▌   | 131/200 [01:57<00:58,  1.17it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 131 Valid Res: Acc=0.4792, Pre=0.1251, Recall=0.6063, F1=0.2074
+valid time:0.03646254539489746
+131-th Epoch: BCE Loss=307.8662
+**end**
+ 66%|██████▌   | 132/200 [01:57<00:55,  1.22it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 132 Valid Res: Acc=0.4803, Pre=0.1253, Recall=0.6063, F1=0.2077
+valid time:0.024137496948242188
+132-th Epoch: BCE Loss=308.3722
+**end**
+ 66%|██████▋   | 133/200 [01:58<00:57,  1.17it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 133 Valid Res: Acc=0.4839, Pre=0.1262, Recall=0.6063, F1=0.2089
+valid time:0.033922672271728516
+133-th Epoch: BCE Loss=308.3103
+**end**
+ 67%|██████▋   | 134/200 [01:59<01:00,  1.08it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 134 Valid Res: Acc=0.4874, Pre=0.1267, Recall=0.6045, F1=0.2095
+valid time:0.0323185920715332
+134-th Epoch: BCE Loss=308.6987
+**end**
+ 68%|██████▊   | 135/200 [02:00<01:00,  1.07it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 135 Valid Res: Acc=0.4878, Pre=0.1268, Recall=0.6045, F1=0.2096
+valid time:0.023262977600097656
+135-th Epoch: BCE Loss=307.9567
+**end**
+ 68%|██████▊   | 136/200 [02:01<00:53,  1.21it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 136 Valid Res: Acc=0.4857, Pre=0.1263, Recall=0.6045, F1=0.2090
+valid time:0.03733658790588379
+136-th Epoch: BCE Loss=308.6828
+**end**
+ 68%|██████▊   | 137/200 [02:02<00:46,  1.36it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 137 Valid Res: Acc=0.4830, Pre=0.1257, Recall=0.6045, F1=0.2081
+valid time:0.04970288276672363
+137-th Epoch: BCE Loss=308.5251
+**end**
+ 69%|██████▉   | 138/200 [02:02<00:43,  1.43it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 138 Valid Res: Acc=0.4771, Pre=0.1246, Recall=0.6063, F1=0.2067
+valid time:0.027800798416137695
+138-th Epoch: BCE Loss=307.7615
+**end**
+ 70%|██████▉   | 139/200 [02:03<00:42,  1.43it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 139 Valid Res: Acc=0.4736, Pre=0.1238, Recall=0.6063, F1=0.2056
+valid time:0.014052391052246094
+139-th Epoch: BCE Loss=307.8242
+**end**
+ 70%|███████   | 140/200 [02:04<00:46,  1.29it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 140 Valid Res: Acc=0.4732, Pre=0.1237, Recall=0.6063, F1=0.2055
+valid time:0.03216290473937988
+140-th Epoch: BCE Loss=308.3286
+**end**
+ 70%|███████   | 141/200 [02:05<00:51,  1.14it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 141 Valid Res: Acc=0.4711, Pre=0.1232, Recall=0.6063, F1=0.2049
+valid time:0.018326282501220703
+141-th Epoch: BCE Loss=308.2411
+**end**
+ 71%|███████   | 142/200 [02:06<00:47,  1.23it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 142 Valid Res: Acc=0.4690, Pre=0.1228, Recall=0.6063, F1=0.2042
+valid time:0.059503793716430664
+142-th Epoch: BCE Loss=308.2069
+**end**
+ 72%|███████▏  | 143/200 [02:07<00:52,  1.08it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 143 Valid Res: Acc=0.4658, Pre=0.1221, Recall=0.6063, F1=0.2033
+valid time:0.031182527542114258
+143-th Epoch: BCE Loss=307.8227
+**end**
+ 72%|███████▏  | 144/200 [02:08<00:51,  1.09it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 144 Valid Res: Acc=0.4642, Pre=0.1217, Recall=0.6063, F1=0.2027
+valid time:0.040162086486816406
+144-th Epoch: BCE Loss=308.5002
+**end**
+ 72%|███████▎  | 145/200 [02:09<01:01,  1.12s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 145 Valid Res: Acc=0.4625, Pre=0.1214, Recall=0.6063, F1=0.2022
+valid time:0.02999258041381836
+145-th Epoch: BCE Loss=308.2966
+**end**
+ 73%|███████▎  | 146/200 [02:10<00:55,  1.03s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 146 Valid Res: Acc=0.4600, Pre=0.1208, Recall=0.6063, F1=0.2015
+valid time:0.03893709182739258
+146-th Epoch: BCE Loss=307.9016
+**end**
+ 74%|███████▎  | 147/200 [02:11<00:58,  1.10s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 147 Valid Res: Acc=0.4579, Pre=0.1204, Recall=0.6063, F1=0.2009
+valid time:0.041765689849853516
+147-th Epoch: BCE Loss=307.9135
+**end**
+ 74%|███████▍  | 148/200 [02:12<00:55,  1.07s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 148 Valid Res: Acc=0.4570, Pre=0.1202, Recall=0.6063, F1=0.2006
+valid time:0.04217362403869629
+148-th Epoch: BCE Loss=308.2399
+**end**
+ 74%|███████▍  | 149/200 [02:13<00:55,  1.08s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 149 Valid Res: Acc=0.4553, Pre=0.1198, Recall=0.6063, F1=0.2001
+valid time:0.01872849464416504
+149-th Epoch: BCE Loss=307.9348
+**end**
+ 75%|███████▌  | 150/200 [02:14<00:52,  1.05s/it]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 150 Valid Res: Acc=0.4547, Pre=0.1197, Recall=0.6063, F1=0.1999
+valid time:0.016275644302368164
+150-th Epoch: BCE Loss=308.0956
+**end**
+ 76%|███████▌  | 151/200 [02:15<00:46,  1.05it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 151 Valid Res: Acc=0.4547, Pre=0.1197, Recall=0.6063, F1=0.1999
+valid time:0.0355379581451416
+151-th Epoch: BCE Loss=307.6067
+**end**
+ 76%|███████▌  | 152/200 [02:16<00:46,  1.02it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 152 Valid Res: Acc=0.4549, Pre=0.1200, Recall=0.6082, F1=0.2005
+valid time:0.03769111633300781
+152-th Epoch: BCE Loss=307.8058
+**end**
+ 76%|███████▋  | 153/200 [02:17<00:42,  1.12it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 153 Valid Res: Acc=0.4564, Pre=0.1217, Recall=0.6175, F1=0.2034
+valid time:0.024383068084716797
+153-th Epoch: BCE Loss=307.5444
+**end**
+ 77%|███████▋  | 154/200 [02:18<00:40,  1.14it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 154 Valid Res: Acc=0.4566, Pre=0.1218, Recall=0.6175, F1=0.2034
+valid time:0.033934593200683594
+154-th Epoch: BCE Loss=307.9458
+**end**
+ 78%|███████▊  | 155/200 [02:18<00:36,  1.24it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 155 Valid Res: Acc=0.4572, Pre=0.1222, Recall=0.6194, F1=0.2041
+valid time:0.02448582649230957
+155-th Epoch: BCE Loss=308.1664
+**end**
+ 78%|███████▊  | 156/200 [02:19<00:37,  1.17it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 156 Valid Res: Acc=0.4574, Pre=0.1222, Recall=0.6194, F1=0.2042
+valid time:0.0227663516998291
+156-th Epoch: BCE Loss=307.9546
+**end**
+ 78%|███████▊  | 157/200 [02:20<00:37,  1.14it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 157 Valid Res: Acc=0.4566, Pre=0.1221, Recall=0.6194, F1=0.2039
+valid time:0.027709484100341797
+157-th Epoch: BCE Loss=307.4701
+**end**
+ 79%|███████▉  | 158/200 [02:21<00:36,  1.16it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 158 Valid Res: Acc=0.4556, Pre=0.1218, Recall=0.6194, F1=0.2036
+valid time:0.034673213958740234
+158-th Epoch: BCE Loss=308.3571
+**end**
+ 80%|███████▉  | 159/200 [02:22<00:33,  1.24it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 159 Valid Res: Acc=0.4545, Pre=0.1216, Recall=0.6194, F1=0.2033
+valid time:0.0354466438293457
+159-th Epoch: BCE Loss=307.5439
+**end**
+ 80%|████████  | 160/200 [02:23<00:33,  1.21it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 160 Valid Res: Acc=0.4528, Pre=0.1215, Recall=0.6213, F1=0.2033
+valid time:0.02854442596435547
+160-th Epoch: BCE Loss=307.5222
+**end**
+ 80%|████████  | 161/200 [02:24<00:34,  1.13it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 161 Valid Res: Acc=0.4526, Pre=0.1215, Recall=0.6213, F1=0.2032
+valid time:0.01439523696899414
+161-th Epoch: BCE Loss=308.2774
+**end**
+ 81%|████████  | 162/200 [02:25<00:33,  1.14it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 162 Valid Res: Acc=0.4514, Pre=0.1212, Recall=0.6213, F1=0.2029
+valid time:0.05176377296447754
+162-th Epoch: BCE Loss=307.9582
+**end**
+ 82%|████████▏ | 163/200 [02:25<00:31,  1.18it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 163 Valid Res: Acc=0.4495, Pre=0.1208, Recall=0.6213, F1=0.2023
+valid time:0.03981971740722656
+163-th Epoch: BCE Loss=308.0492
+**end**
+ 82%|████████▏ | 164/200 [02:26<00:29,  1.20it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 164 Valid Res: Acc=0.4474, Pre=0.1204, Recall=0.6213, F1=0.2017
+valid time:0.03164339065551758
+164-th Epoch: BCE Loss=308.0900
+**end**
+ 82%|████████▎ | 165/200 [02:27<00:28,  1.21it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 165 Valid Res: Acc=0.4444, Pre=0.1201, Recall=0.6231, F1=0.2013
+valid time:0.04499101638793945
+165-th Epoch: BCE Loss=307.4940
+**end**
+ 83%|████████▎ | 166/200 [02:28<00:28,  1.21it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 166 Valid Res: Acc=0.4423, Pre=0.1196, Recall=0.6231, F1=0.2007
+valid time:0.01587510108947754
+166-th Epoch: BCE Loss=308.2970
+**end**
+ 84%|████████▎ | 167/200 [02:28<00:24,  1.35it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 167 Valid Res: Acc=0.4394, Pre=0.1190, Recall=0.6231, F1=0.1999
+valid time:0.014353513717651367
+167-th Epoch: BCE Loss=307.9388
+**end**
+ 84%|████████▍ | 168/200 [02:29<00:21,  1.52it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 168 Valid Res: Acc=0.4346, Pre=0.1181, Recall=0.6231, F1=0.1985
+valid time:0.034030914306640625
+168-th Epoch: BCE Loss=307.5698
+**end**
+ 84%|████████▍ | 169/200 [02:29<00:18,  1.65it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 169 Valid Res: Acc=0.4291, Pre=0.1170, Recall=0.6231, F1=0.1970
+valid time:0.020264387130737305
+169-th Epoch: BCE Loss=307.4168
+**end**
+ 85%|████████▌ | 170/200 [02:30<00:19,  1.58it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 170 Valid Res: Acc=0.4256, Pre=0.1163, Recall=0.6231, F1=0.1960
+valid time:0.02297687530517578
+170-th Epoch: BCE Loss=307.2165
+**end**
+ 86%|████████▌ | 171/200 [02:31<00:19,  1.53it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 171 Valid Res: Acc=0.4247, Pre=0.1161, Recall=0.6231, F1=0.1958
+valid time:0.02075934410095215
+171-th Epoch: BCE Loss=308.0293
+**end**
+ 86%|████████▌ | 172/200 [02:31<00:18,  1.53it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 172 Valid Res: Acc=0.4252, Pre=0.1162, Recall=0.6231, F1=0.1959
+valid time:0.02153635025024414
+172-th Epoch: BCE Loss=307.9713
+**end**
+ 86%|████████▋ | 173/200 [02:32<00:18,  1.43it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 173 Valid Res: Acc=0.4233, Pre=0.1159, Recall=0.6231, F1=0.1954
+valid time:0.03229117393493652
+173-th Epoch: BCE Loss=307.8197
+**end**
+ 87%|████████▋ | 174/200 [02:33<00:21,  1.21it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 174 Valid Res: Acc=0.4191, Pre=0.1151, Recall=0.6231, F1=0.1942
+valid time:0.012182950973510742
+174-th Epoch: BCE Loss=307.2160
+**end**
+ 88%|████████▊ | 175/200 [02:34<00:22,  1.12it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 175 Valid Res: Acc=0.4170, Pre=0.1147, Recall=0.6231, F1=0.1937
+valid time:0.028004884719848633
+175-th Epoch: BCE Loss=307.9622
+**end**
+ 88%|████████▊ | 176/200 [02:35<00:21,  1.10it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 176 Valid Res: Acc=0.4161, Pre=0.1145, Recall=0.6231, F1=0.1935
+valid time:0.03603386878967285
+176-th Epoch: BCE Loss=307.5792
+**end**
+ 88%|████████▊ | 177/200 [02:36<00:21,  1.07it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 177 Valid Res: Acc=0.4151, Pre=0.1143, Recall=0.6231, F1=0.1932
+valid time:0.03996443748474121
+177-th Epoch: BCE Loss=307.2462
+**end**
+ 89%|████████▉ | 178/200 [02:37<00:20,  1.05it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 178 Valid Res: Acc=0.4143, Pre=0.1141, Recall=0.6231, F1=0.1930
+valid time:0.03568768501281738
+178-th Epoch: BCE Loss=307.2533
+**end**
+ 90%|████████▉ | 179/200 [02:38<00:19,  1.09it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 179 Valid Res: Acc=0.4145, Pre=0.1142, Recall=0.6231, F1=0.1930
+valid time:0.05517578125
+179-th Epoch: BCE Loss=307.3596
+**end**
+ 90%|█████████ | 180/200 [02:39<00:18,  1.11it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 180 Valid Res: Acc=0.4159, Pre=0.1145, Recall=0.6231, F1=0.1934
+valid time:0.03135228157043457
+180-th Epoch: BCE Loss=307.1697
+**end**
+ 90%|█████████ | 181/200 [02:40<00:17,  1.07it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 181 Valid Res: Acc=0.4170, Pre=0.1147, Recall=0.6231, F1=0.1937
+valid time:0.04386568069458008
+181-th Epoch: BCE Loss=306.5764
+**end**
+ 91%|█████████ | 182/200 [02:41<00:14,  1.22it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 182 Valid Res: Acc=0.4191, Pre=0.1151, Recall=0.6231, F1=0.1942
+valid time:0.029117345809936523
+182-th Epoch: BCE Loss=307.4037
+**end**
+ 92%|█████████▏| 183/200 [02:41<00:14,  1.19it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 183 Valid Res: Acc=0.4210, Pre=0.1154, Recall=0.6231, F1=0.1948
+valid time:0.03188800811767578
+183-th Epoch: BCE Loss=308.0676
+**end**
+ 92%|█████████▏| 184/200 [02:42<00:12,  1.31it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 184 Valid Res: Acc=0.4191, Pre=0.1151, Recall=0.6231, F1=0.1942
+valid time:0.015134811401367188
+184-th Epoch: BCE Loss=307.3877
+**end**
+ 92%|█████████▎| 185/200 [02:43<00:11,  1.34it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 185 Valid Res: Acc=0.4151, Pre=0.1143, Recall=0.6231, F1=0.1932
+valid time:0.024796247482299805
+185-th Epoch: BCE Loss=307.2938
+**end**
+ 93%|█████████▎| 186/200 [02:43<00:09,  1.49it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 186 Valid Res: Acc=0.4103, Pre=0.1134, Recall=0.6231, F1=0.1919
+valid time:0.025012493133544922
+186-th Epoch: BCE Loss=307.6616
+**end**
+ 94%|█████████▎| 187/200 [02:44<00:08,  1.60it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 187 Valid Res: Acc=0.4063, Pre=0.1127, Recall=0.6231, F1=0.1909
+valid time:0.020512104034423828
+187-th Epoch: BCE Loss=308.0136
+**end**
+ 94%|█████████▍| 188/200 [02:45<00:08,  1.42it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 188 Valid Res: Acc=0.3992, Pre=0.1114, Recall=0.6231, F1=0.1890
+valid time:0.02841925621032715
+188-th Epoch: BCE Loss=307.4719
+**end**
+ 94%|█████████▍| 189/200 [02:45<00:07,  1.39it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 189 Valid Res: Acc=0.3908, Pre=0.1102, Recall=0.6250, F1=0.1874
+valid time:0.03222537040710449
+189-th Epoch: BCE Loss=307.5107
+**end**
+ 95%|█████████▌| 190/200 [02:46<00:07,  1.37it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 190 Valid Res: Acc=0.3813, Pre=0.1086, Recall=0.6250, F1=0.1850
+valid time:0.03265118598937988
+190-th Epoch: BCE Loss=307.7115
+**end**
+ 96%|█████████▌| 191/200 [02:47<00:07,  1.20it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 191 Valid Res: Acc=0.3734, Pre=0.1073, Recall=0.6250, F1=0.1831
+valid time:0.019816160202026367
+191-th Epoch: BCE Loss=307.5001
+**end**
+ 96%|█████████▌| 192/200 [02:48<00:05,  1.36it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 192 Valid Res: Acc=0.3556, Pre=0.1047, Recall=0.6269, F1=0.1794
+valid time:0.01100611686706543
+192-th Epoch: BCE Loss=306.9243
+**end**
+ 96%|█████████▋| 193/200 [02:48<00:05,  1.38it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 193 Valid Res: Acc=0.3480, Pre=0.1038, Recall=0.6287, F1=0.1781
+valid time:0.01450967788696289
+193-th Epoch: BCE Loss=306.9729
+**end**
+ 97%|█████████▋| 194/200 [02:49<00:03,  1.61it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 194 Valid Res: Acc=0.3455, Pre=0.1034, Recall=0.6287, F1=0.1776
+valid time:0.020418167114257812
+194-th Epoch: BCE Loss=306.7838
+**end**
+ 98%|█████████▊| 195/200 [02:49<00:02,  1.80it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 195 Valid Res: Acc=0.3461, Pre=0.1035, Recall=0.6287, F1=0.1777
+valid time:0.011978864669799805
+195-th Epoch: BCE Loss=307.2927
+**end**
+ 98%|█████████▊| 196/200 [02:50<00:02,  1.99it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 196 Valid Res: Acc=0.3463, Pre=0.1033, Recall=0.6269, F1=0.1773
+valid time:0.02896904945373535
+196-th Epoch: BCE Loss=306.9888
+**end**
+ 98%|█████████▊| 197/200 [02:50<00:01,  2.06it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 197 Valid Res: Acc=0.3455, Pre=0.1031, Recall=0.6269, F1=0.1771
+valid time:0.01355123519897461
+197-th Epoch: BCE Loss=307.8928
+**end**
+ 99%|█████████▉| 198/200 [02:50<00:00,  2.05it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 198 Valid Res: Acc=0.3436, Pre=0.1031, Recall=0.6287, F1=0.1771
+valid time:0.010677814483642578
+198-th Epoch: BCE Loss=307.4420
+**end**
+100%|█████████▉| 199/200 [02:51<00:00,  1.94it/s]***begin***
+support_batches:4,query_batches: 4
+support_batches:2,query_batches: 2
+Epoch 199 Valid Res: Acc=0.3388, Pre=0.1024, Recall=0.6287, F1=0.1761
+valid time:0.023902177810668945
+199-th Epoch: BCE Loss=307.7065
+**end**
+100%|██████████| 200/200 [02:51<00:00,  2.05it/s]100%|██████████| 200/200 [02:51<00:00,  1.16it/s]
+Train_time=20.77929401397705 for 200 epochs
+begin test!
+support_batches:2,query_batches: 2
+IACS Test Task-0: Acc=0.3170, Pre=0.3170, Recall=1.0000, F1=0.4814
+IACS Test Task-1: Acc=0.0648, Pre=0.0644, Recall=1.0000, F1=0.1211
+Epoch 200 IACS Test Res: Acc=0.1393, Pre=0.1391, Recall=1.0000, F1=0.2442
+Epoch 200 finetune_time=0.3306403160095215, IACS_Test_time= 0.012128353118896484
+train_time=20.7793, test_time=0.0121

@@ -1,0 +1,17 @@
+# 创建新环境
+conda create -n IACS python=3.8 -y
+conda activate IACS
+
+# 使用 conda 安装 PyTorch
+conda install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.6 -c pytorch -c nvidia -y
+
+# 然后安装 PyG 扩展
+pip install torch-scatter==2.1.1+pt113cu116 -f https://data.pyg.org/whl/torch-1.13.0%2Bcu116.html
+pip install torch-sparse==0.6.17+pt113cu116 -f https://data.pyg.org/whl/torch-1.13.0%2Bcu116.html
+pip install torch-cluster==1.6.1+pt113cu116 -f https://data.pyg.org/whl/torch-1.13.0%2Bcu116.html
+pip install torch-spline-conv==1.2.2+pt113cu116 -f https://data.pyg.org/whl/torch-1.13.0%2Bcu116.html
+pip install torch-geometric==1.7.2
+
+conda install ogb
+
+conda install networkx-metis
